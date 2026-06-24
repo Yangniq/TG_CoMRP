@@ -1,0 +1,28 @@
+We are restarting the multi-robot task discussion due to issues identified in the previous planning result.
+
+[Original Task]
+The task instruction is:
+{task}
+
+[Reference Trajectory]
+The reference object–state trajectory is:
+{traj}
+This trajectory contains only sparse key state points and is for reference only. It does NOT represent a complete or directly executable solution.
+
+[Previous Plan (with issues)]
+The previously generated task execution plan is shown below. It contains errors and should NOT be executed as-is:
+{previous_plan}
+
+[Identified Issues]
+The following problems have been identified in the previous plan:
+{feedback_issues}
+
+[Objective of This Round]
+Your goal is to collaboratively revise and correct the previous plan rather than starting from scratch.
+You should:
+- Preserve correct and reasonable parts of the previous plan whenever possible
+- Fix the identified issues with minimal necessary changes
+- Ensure the final plan is logically complete, physically feasible, and directly executable in AI2-THOR
+- Strictly comply with all AI2-THOR interaction rules and agent-specific action constraints
+
+Please proceed with error analysis, revision, and final validation, and output ONLY the corrected final task execution plan.

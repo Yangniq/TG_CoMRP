@@ -1,0 +1,61 @@
+*****
+Executing action:  {'action': 'ToggleObjectOff', 'objectId': 'LightSwitch|+02.33|+01.31|-00.16', 'agent_id': 1}
+Error Message: NullReferenceException: Target object not found within the specified visibility. 
+*****
+Target object is not openable.
+*****robot1 pickup robot2 put
+Executing action:  {'action': 'PutObject', 'objectId': 'Bed|-01.05|00.00|-01.85', 'agent_id': 2}
+Error Message: Can't place an object if Agent isn't holding anything
+//Can't pick up an object if Agent is holding something.
+*****error action
+Executing action: {"action": "VerifyState", "params": {"object_name": "Potato", "state": "isCooked"}}
+Exception in thread Thread-9:
+Traceback (most recent call last):
+  File "/home/yangniq/miniconda3/envs/agentLLM/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+    self.run()
+  File "/home/yangniq/miniconda3/envs/agentLLM/lib/python3.9/threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yangniq/agentLLM/main.py", line 88, in execute_robot_actions
+    robot_def = next(r for r in config.robots_definitions if r["name"] == robot_name)
+StopIteration
+*****can not excute action
+{"action": "ToggleObjectOff", "params": {"object_name": "LightSwitch"}}
+Exception in thread Thread-5:
+Traceback (most recent call last):
+  File "/home/yangniq/miniconda3/envs/agentLLM/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+    self.run()
+  File "/home/yangniq/miniconda3/envs/agentLLM/lib/python3.9/threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/yangniq/agentLLM/main.py", line 90, in execute_robot_actions
+    raise ValueError(f"Undefined action: {action_name}")
+ValueError: Undefined action: ToggleObjectOff
+*****
+ACTION: Going to  KitchenArea
+UnboundLocalError: local variable 'dest_obj_center' referenced before assignment
+*****
+Executing action:  {'action': 'PutObject', 'objectId': 'Fridge|-02.14|+00.00|-01.69', 'agent_id': 0}
+Target openable Receptacle is CLOSED, can't place if target is not open!
+*****
+ValueError: Undefined action: MonitorObject
+*****
+Error Message: One object can only be held by one robot at a time
+*****
+{"action": "ToggleObjectOn", "params": {"object_name": "Microwave"}}
+Error Message: Can't toggle the microwave on if it is not closed.
+*****
+Error Message: can't toggle object on if it's already on!
+*****
+Error Message: ShowerDoor_7fe7b00c is blocking Agent 0 from moving by (0.0383, 0.0000, 0.2471).
+*****
+Executing action:  {'action': 'PutObject', 'objectId': 'GarbageCan|-00.38|+00.00|+04.10', 'agent_id': 2}
+*****
+Error Message: No valid positions to place object found
+*****
+Error Message: BathtubBasin_23fd1b8d does not have dirtyable property!
+*****
+Error Message: The faucet cannot be turned off if it is already off.
+*****
+Error Message: InvalidOperationException: Closest point on NavMesh was too far from the agent:  (startPosition=(-1.489, -0.001, 3.388), closest navmesh position (-1.521, 0.014, 3.372)) and (targetPosition=(-1.500, -0.001, 4.000), closest navmesh position (-1.500, 0.014, 3.990)).. trace:   at UnityStandardAssets.Characters.FirstPerson.BaseFPSAgentController.SafelyComputeNavMeshPath (UnityEngine.Vector3 start, UnityEngine.Vector3 target, UnityEngine.AI.NavMeshPath path, System.Single allowedError) [0x001d7] in <40d6a6c54fa349fab67f7470c3432f83>:0
+  at UnityStandardAssets.Characters.FirstPerson.BaseFPSAgentController.ObjectNavExpertAction (ServerAction action) [0x00070] in <40d6a6c54fa349fab67f7470c3432f83>:0
+  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke(System.Reflection.MonoMethod,object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00032] in <695d1cc93cca45069c528c15c9fdd749>:0

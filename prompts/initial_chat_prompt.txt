@@ -1,0 +1,53 @@
+We are trying to complete the task: {task}.
+The reference object-state trajectory is: {traj}. It is important to emphasize that this reference trajectory contains **only sparse key state points** and is for reference purposes only. It **does not constitute a complete or directly executable solution**. We are expected to reason beyond it, **fill in missing details, and extend it**, ultimately producing a complete, detailed task execution plan that can be directly executed in the AI2-THOR platform.
+
+The objects present in the AI2-THOR scene are: {obj_list}.\
+
+During the discussion and planning process, please jointly adhere to the following principles and constraints:
+## 1. Goal-oriented planning with executability as the priority
+Our goal is not to restate the reference trajectory, but to derive a logically complete, physically reasonable, and executable action sequence that achieves the task objectives. All proposed actions must be mappable to primitive actions supported by AI2-THOR.
+
+## 2. Strict compliance with AI2-THOR interaction rules
+Please pay special attention to the following known constraints and actively check for violations during planning:
+- At any time, a robot may hold only one object via the PickupObject action.
+- When executing SliceObject, the robot must be holding the appropriate cutting tool, and the target object must not be held. After successful execution, multiple sliced objects will appear in the scene (e.g., BreadSliced).
+If you identify any potential violations or unmet preconditions, clearly point them out during the discussion and propose appropriate corrections.\
+## 3. Fill in intermediate steps to ensure trajectory continuity
+If the reference trajectory omits intermediate actions (such as navigation), be sure to explicitly fill them in so that the overall execution process is temporally continuous, spatially coherent, and physically reasonable.
+## 4. Capability-aware task allocation
+Each robot may execute only the actions available in its own action library. Before the discussion begins, each participant must explicitly introduce and declare their available action set. When you are unaware of others’ capabilities, **do not arbitrarily assign tasks to them. You must ensure that each person’s tasks match their skills**.
+## 5. Efficiency and parallel collaboration requirement
+- The task plan must **prioritize execution efficiency** and enable **parallel collaboration** whenever multiple robots are available.
+- Whenever tasks are **independent and non-conflicting**, schedule them **within the same step** to allow robots to operate simultaneously rather than sequentially.
+- Avoid unnecessary waiting or idle time by maximizing concurrent actions across robots.
+- The **duration of a step is determined by the robot with the longest action sequence in that step** (i.e., the maximum number of actions assigned to any robot in the step).
+- Therefore, the plan should aim to **minimize the total execution time by maximizing parallelism and reducing the number of steps**, while ensuring that no object, spatial, or tool constraints are violated.\
+
+
+
+
+## 消融实验提示词（w/o traj.）
+We are trying to complete the task: {task}.
+We are expected to produce a complete, detailed task execution plan that can be directly executed in the AI2-THOR platform.
+
+The objects present in the AI2-THOR scene are: {obj_list}.\
+
+During the discussion and planning process, please jointly adhere to the following principles and constraints:
+## 1. Goal-oriented planning with executability as the priority
+Our goal is not to restate the reference trajectory, but to derive a logically complete, physically reasonable, and executable action sequence that achieves the task objectives. All proposed actions must be mappable to primitive actions supported by AI2-THOR.
+
+## 2. Strict compliance with AI2-THOR interaction rules
+Please pay special attention to the following known constraints and actively check for violations during planning:
+- At any time, a robot may hold only one object via the PickupObject action.
+- When executing SliceObject, the robot must be holding the appropriate cutting tool, and the target object must not be held. After successful execution, multiple sliced objects will appear in the scene (e.g., BreadSliced).
+If you identify any potential violations or unmet preconditions, clearly point them out during the discussion and propose appropriate corrections.\
+
+## 3. Capability-aware task allocation
+Each robot may execute only the actions available in its own action library. Before the discussion begins, each participant must explicitly introduce and declare their available action set. When you are unaware of others’ capabilities, **do not arbitrarily assign tasks to them. You must ensure that each person’s tasks match their skills**.
+
+## 4. Efficiency and parallel collaboration requirement
+- The task plan must **prioritize execution efficiency** and enable **parallel collaboration** whenever multiple robots are available.
+- Whenever tasks are **independent and non-conflicting**, schedule them **within the same step** to allow robots to operate simultaneously rather than sequentially.
+- Avoid unnecessary waiting or idle time by maximizing concurrent actions across robots.
+- The **duration of a step is determined by the robot with the longest action sequence in that step** (i.e., the maximum number of actions assigned to any robot in the step).
+- Therefore, the plan should aim to **minimize the total execution time by maximizing parallelism and reducing the number of steps**, while ensuring that no object, spatial, or tool constraints are violated.\
