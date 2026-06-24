@@ -1,6 +1,6 @@
 # TG-CoMRP：基于轨迹引导的大语言模型协同多机器人任务规划框架
 
-本仓库为论文 **Trajectory-Guided Collaborative LLM-based Multi-Robot Task Planning (TG-CoMRP)** 的官方代码实现。
+本仓库为论文 **TG-CoMRP: A Trajectory-Guided Collaborative LLM-based Framework for Multi-Robot Task Planning** 的官方代码实现。
 
 ## 项目简介
 
