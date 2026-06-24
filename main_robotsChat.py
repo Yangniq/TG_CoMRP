@@ -56,12 +56,7 @@ def load_robot_prompt(template_path, actions):
     actions_str = str(actions)
     return template.replace("{{AVAILABLE_ACTIONS}}", actions_str)
 
-# llm_config = {
-#         "config_list": [{ "model": "deepseek-chat",
-#             "api_key": "sk-cd7244151dd14c57a93620672e7295f9",
-#             "base_url": "https://api.deepseek.com/v1"}],
-#         "temperature": 1,
-#     }
+
 def run_group_chat(llm_config, initial_task_message, log_file_dir):
     if not llm_config["config_list"][0]["api_key"]:
         raise ValueError("OPENAI_API_KEY 环境变量未设置。请设置 API Key。")
